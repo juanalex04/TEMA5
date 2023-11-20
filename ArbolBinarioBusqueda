@@ -1,0 +1,37 @@
+Clase Nodo:
+    def __init__(self, valor):
+        self.valor = valor
+ self.izquierda = Ninguno
+ self.derecha = Ninguno
+
+def insertar(raiz, valor):
+ si el raíz es Ninguno:
+        return Nodo(valor)
+ más:
+ Si valor < raiz.valor:
+            raiz.izquierda = insertar(raiz.izquierda, valor)
+ más:
+            raiz.derecha = insertar(raiz.derecha, valor)
+ Volver Raíz
+
+def buscar(raiz, valor):
+ if raiz es None o raiz.valor == valor:
+ Volver Raíz
+ Si valor < raiz.valor:
+        return buscar(raiz.izquierda, valor)
+    return buscar(raiz.derecha, valor)
+
+# Ejemplo de uso
+raiz = Ninguno
+valores = [5, 3, 7, 2, 4, 6, 8, 10, 77, 23, 64, 76, 111, 127, 453]
+
+Para el valor en valores:
+    raiz = insertar(raiz, valor)
+
+valor_a_buscar = 55
+nodo_encontrado = buscar(raiz, valor_a_buscar)
+
+Si nodo_encontrado:
+    print(f"Valor {valor_a_buscar} encontrado en el árbol binario.")
+más:
+    print(f"Valor {valor_a_buscar} no encontrado en el árbol binario.")
