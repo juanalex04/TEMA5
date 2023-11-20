@@ -1,0 +1,36 @@
+Clase Nodo:
+    def __init__(self, valor):
+        self.valor = valor
+ self.izquierda = Ninguno
+ self.derecha = Ninguno
+
+def insertar(raiz, valor):
+ si el raíz es Ninguno:
+        return Nodo(valor)
+ más:
+ Si valor < raiz.valor:
+            raiz.izquierda = insertar(raiz.izquierda, valor)
+ más:
+            raiz.derecha = insertar(raiz.derecha, valor)
+ Volver Raíz
+
+# Ejemplo de uso:
+# Crear un árbol vacío
+raiz = Ninguno
+
+# Insertar elementos en el árbol
+elementos = [5, 3, 7, 2, 4, 6, 8, 10, 32, 88, 63, 100]
+for elemento in elementos:
+    raiz = insertar(raiz, elemento)
+
+def imprimir_inorden(raiz):
+ Si se levanta:
+        # Recorrer el subárbol izquierdo
+        imprimir_inorden(raiz.izquierda)
+        # Imprimir el valor del nodo actual
+        print(raiz.valor, end=' ')
+        # Recorrer el subárbol derecho
+        imprimir_inorden(raiz.derecha)
+
+# Ejemplo de uso para imprimir el árbol
+imprimir_inorden(raiz)
